@@ -1,6 +1,15 @@
 body {
     margin: 0;
     overflow: hidden; /* Para evitar barras de rolagem durante a animação */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.animation-container {
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #abertura {
@@ -20,7 +29,13 @@ body {
 .animation-container {
     position: relative;
 }
-
+.nome {
+    color: white;
+    margin-top: 30px;
+    text-align: center;
+    transition: opacity 1s ease, transform 1s ease; /* Altere a ordem das transições */
+    transition-delay: 0.5s; /* Adicione um pequeno atraso para que o fundo preto apareça primeiro */
+}
 .white-box {
     width: 100px; /* Ajuste conforme necessário */
     height: 100px; /* Ajuste conforme necessário */
@@ -29,9 +44,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px; /* Ajuste conforme necessário */
+    font-size: 24px; /* Ajuste c;onforme necessário */
     opacity: 0;
     transform: scale(0.1);
     transition: opacity 1s ease, transform 1s ease; /* Altere a ordem das transições */
     transition-delay: 0.5s; /* Adicione um pequeno atraso para que o fundo preto apareça primeiro */
+    border-radius: 10px;
 }
