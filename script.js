@@ -9,6 +9,15 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Aguarde mais um momento antes de esconder a animação
         setTimeout(function() {
+            setTimeout(function() {
+                whiteBox.style.opacity = '0';
+                whiteBox.style.transform = 'scale(0.1)';
+                
+            },1000);
+            setTimeout(function() {
+var abertura = document.querySelector('abertura');
+                abertura.style.opacity = '0';
+ },1000);
             document.getElementById('abertura').style.display = 'none';
         }, 2000); // Ajuste conforme necessário
     }, 1000); // Ajuste conforme necessário

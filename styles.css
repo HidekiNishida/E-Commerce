@@ -14,6 +14,7 @@ body {
     align-items: center;
     background-color: black; /* Adicione isso para definir o fundo preto */
     z-index: 9999; /* Para garantir que esteja acima do conteúdo do site */
+    transition: opacity 1s ease, transform 1s ease; /* Altere a ordem das transições */
 }
 
 .animation-container {
