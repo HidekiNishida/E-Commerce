@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 
             },1000);
             setTimeout(function() {
-var abertura = document.querySelector('abertura');
+var abertura = document.getElementById('abertura');
                 abertura.style.opacity = '0';
  },1000);
             document.getElementById('abertura').style.display = 'none';
