@@ -51,3 +51,13 @@ body {
     transition-delay: 0.5s; /* Adicione um pequeno atraso para que o fundo preto apareça primeiro */
     border-radius: 10px;
 }
+
+
+.animated-text span {
+    display: none;
+    line-height: 1;
+  }
+  
+  .animated-text span.active {
+    display: inline;
+  }
