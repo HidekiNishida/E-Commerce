@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         var abertura = document.getElementById('abertura');
                                         abertura.style.opacity = '0';
                                         setTimeout(function() {
-                                            aberturaContainer.style.display = 'none';
+                                          abertura.style.display = 'none';
                                             whiteBox.remove();
                                             nomeContainer.remove();
                                         },1000);
