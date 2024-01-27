@@ -170,8 +170,15 @@
         
             function render() {
 
+                if (isMobileDevice()) {
+        // Atualize a posição da câmera com base nos valores do sensor de movimento
+        camera.position.x += ((mouseX + mouseX) - camera.position.x) * 0.005;
+        camera.position.y += ((-mouseY - mouseY) - camera.position.y) * 0.005;
+    } else {
+        // Mantenha o comportamento original do mouse para desktop
         camera.position.x += (mouseX - camera.position.x) * 0.005;
         camera.position.y += (-mouseY - camera.position.y) * 0.005;
+    }
     
                 camera.lookAt( scene.position );
                 renderer.render(scene, camera);
