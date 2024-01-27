@@ -78,3 +78,22 @@ body {
   .animated-text span.active {
     display: inline;
   }
+
+  .Description {
+    margin-top: 30px;
+    width: 100%;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+  @media only screen and (max-width: 600px) {
+    /* Altera o tamanho da fonte para dispositivos com largura máxima de 600 pixels (mobile) */
+    .Description {
+        font-size: 18px
+    }
+    
+}
