@@ -12,6 +12,23 @@ body {
     align-items: center;
 }
 
+
+#BackgroundStars {
+
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Garante que o canvas fique atrás do conteúdo */
+
+}
+
+#stats {
+    visibility: hidden;
+}
+
+
 #abertura {
     width: 100%;
     height: 100vh;
