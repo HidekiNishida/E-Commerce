@@ -70,11 +70,13 @@
 
 
           
-
+                isMobileDevice()
             init();
             animate();
 
-
+            function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
             
             function init() {
                 container = document.getElementById('BackgroundStars');
@@ -147,7 +149,14 @@
                 container.appendChild( stats.domElement );
         
                 window.addEventListener( 'resize', onWindowResize, false );
-                document.addEventListener( 'mousemove', onMouseMove, false );
+
+                if (isMobileDevice()) {
+    window.addEventListener('deviceorientation', onDeviceMove, false);
+} else {
+    document.addEventListener('mousemove', onMouseMove, false);
+}
+
+                //document.addEventListener( 'mousemove', onMouseMove, false );
                 
             }
         
@@ -160,8 +169,17 @@
         
         
             function render() {
-                camera.position.x += ( mouseX - camera.position.x ) * 0.005;
-                camera.position.y += ( - mouseY - camera.position.y ) * 0.005;
+
+                if (isMobileDevice()) {
+        // Atualize a posição da câmera com base nos valores do sensor de movimento
+        camera.position.x += ((mouseX + gamma) - camera.position.x) * 0.005;
+        camera.position.y += ((-mouseY - beta) - camera.position.y) * 0.005;
+    } else {
+        // Mantenha o comportamento original do mouse para desktop
+        camera.position.x += (mouseX - camera.position.x) * 0.005;
+        camera.position.y += (-mouseY - camera.position.y) * 0.005;
+    }
+    
                 camera.lookAt( scene.position );
                 renderer.render(scene, camera);
             }
@@ -262,9 +280,26 @@
         
             function onMouseMove(e) {
         
+                
                 mouseX = e.clientX - windowHalfX;
                 mouseY = e.clientY - windowHalfY;
-            }	
+            }
+            
+            function onDeviceMove(event) {
+    // Obtenha os valores de rotação
+    var alpha = event.alpha || 0; // rotação em torno do eixo z
+    var beta = event.beta || 0;   // rotação em torno do eixo x
+    var gamma = event.gamma || 0; // rotação em torno do eixo y
+
+    // Ajuste os valores conforme necessário
+    // Aqui, você pode experimentar diferentes ajustes com base na orientação do dispositivo
+    // Certifique-se de testar em vários dispositivos para obter o comportamento desejado
+
+    // Atualize mouseX e mouseY com base nos valores de rotação
+    mouseX = gamma;
+    mouseY = beta;
+
+}
         
         })();
         </script>
