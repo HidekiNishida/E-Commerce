@@ -193,16 +193,14 @@
             function render() {
 
                 if (isMobileDevice()) {
-        // Atualize a posição da câmera com base nos valores do sensor de movimento
-        camera.position.x += (mouseX + (gammaV * 3) - camera.position.x) * 0.005;
-        camera.position.y += (-mouseY - ((-betaV) * 3) - camera.position.y) * 0.005;
-    } else {
-        // Mantenha o comportamento original do mouse para desktop
-        camera.position.x += (mouseX - camera.position.x) * 0.005;
-        camera.position.y += (-mouseY - camera.position.y) * 0.005;
-    }
-    camera.position.x += window.scrollX * 0.001;
-    camera.position.y += window.scrollY * 0.001;
+    camera.position.x += (mouseX + (gammaV * 3) - camera.position.x) * 0.005;
+    camera.position.y += (-mouseY - ((-betaV) * 3) - camera.position.y) * 0.005;
+} else {
+    camera.position.x += (mouseX - camera.position.x) * 0.005;
+    camera.position.y += (-mouseY - camera.position.y) * 0.005;
+}
+camera.position.x += window.scrollX * 0.001;
+camera.position.y += window.scrollY * 0.001;
 
                 camera.lookAt( scene.position );
                 renderer.render(scene, camera);
@@ -229,7 +227,8 @@
                   var WIDTH = window.innerWidth,
                       HEIGHT = window.innerHeight;
         
-                  camera.aspect = aspectRatio;
+                  //camera.aspect = aspectRatio;
+                  camera.aspect = WIDTH / HEIGHT;
                   camera.updateProjectionMatrix();
                   renderer.setSize(WIDTH, HEIGHT);
             }
@@ -238,7 +237,7 @@
                 /* 	Yep, it's a Star Wars: Knights of the Old Republic reference,
                     are you really surprised at this point? 
                                                             */
-                var starQty = 45000;
+                var starQty = 17000;
                     //geometry = new THREE.SphereGeometry(1000, 100, 50);
                     geometry = new THREE.CircleGeometry(1, 32);
                     materialOptions = {
@@ -289,9 +288,9 @@
                 for (var i = 0; i < starQty; i++) {		
         
                     var starVertex = new THREE.Vector3();
-                    starVertex.x = Math.random() * 2000 - 1000;
-                    starVertex.y = Math.random() * 2000 - 1000;
-                    starVertex.z = Math.random() * 2000 - 1000;
+                    starVertex.x = Math.random() * 1000 - 500;
+                    starVertex.y = Math.random() * 1000 - 500;
+                    starVertex.z = Math.random() * 1000 - 500;
         
                     geometry.vertices.push(starVertex);
         
