@@ -17,6 +17,19 @@
 </head>
 <body>
     <div id="BackgroundStars"></div>
+    <div class="white-box-menu">
+        VN
+    </div>
+    <nav class="glass-menu">
+       
+        <ul>
+          <li><a href="#"><img src="assets/images/home.svg" alt="Home"></a></li>
+          <li><a href="#"><img src="assets/images/about.svg" alt="About"></a></li>
+          <li><a href="#"><img src="assets/images/work.svg" alt="Works"></a></li>
+          <li><a href="#"><img src="assets/images/contact2.svg" alt="Contact"></a></li>
+        </ul>
+      </nav>
+   
     <div id="abertura">
         <div class="black-background"></div>
         <div class="animation-container">
@@ -150,7 +163,7 @@
                 }
         
 
-                renderer.setClearColor(0x000011, 1);
+                renderer.setClearColor(0x000000, 0);
 
                 renderer.setPixelRatio(window.devicePixelRatio);
                 renderer.setSize( WIDTH, HEIGHT);
@@ -257,7 +270,7 @@ camera.position.y += window.scrollY * 0.001;
                         size: 1.0, //I know this is the default, it's for you.  Play with it if you want.
                         transparency: true, 
                         opacity: 0.9,
-                        color: 0x000011, // Altere a cor para branco para que as estrelas brilhem
+                        color: 0x000050, // Altere a cor para branco para que as estrelas brilhem
     vertexShader: `
         varying vec2 vUv;
         void main() {

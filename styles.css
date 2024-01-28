@@ -2,7 +2,16 @@ body {
     margin: 0;
     overflow: hidden; /* Para evitar barras de rolagem durante a animação */
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000011;
 }
+
+#conteudo-do-site {
+ position: absolute;
+ left: 65px;
+ right: 20px;
+
+}
+
 
 .animation-container {
     position: relative;
@@ -21,11 +30,47 @@ body {
     top: 0;
     left: 0;
     z-index: -1; /* Garante que o canvas fique atrás do conteúdo */
-
+    background: linear-gradient(to bottom, #000011, #000022);
 }
 
 #stats {
     visibility: hidden;
+}
+
+.glass-menu {
+    position: fixed;
+    margin-top: 70px;
+    left: 10px;
+    width: 50px;
+    margin-bottom: 10px;
+    backdrop-filter: blur(10px); /* Aplica um desfoque de 10 pixels */
+    background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo com opacidade para criar o efeito de vidro */
+    border-radius: 10px; /* Borda arredondada para suavizar a aparência */
+    z-index: 2;
+  }
+  .glass-menu ul {
+    list-style: none;
+    padding: 2px;
+    margin: 0;
+  }
+
+  .glass-menu img {
+    padding: 5px;
+  }
+  .white-box-menu {
+    position:fixed;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 50px; /* Ajuste conforme necessário */
+    height: 50px; /* Ajuste conforme necessário */
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; /* Ajuste c;onforme necessário */
+    border-radius: 5px;
+    z-index: 2;
 }
 
 
@@ -46,6 +91,10 @@ body {
 .animation-container {
     position: relative;
 }
+
+
+
+
 .nome {
     color: white;
     margin-top: 30px;
@@ -68,6 +117,7 @@ body {
     transition-delay: 0.5s; /* Adicione um pequeno atraso para que o fundo preto apareça primeiro */
     border-radius: 10px;
 }
+
 
 
 .animated-text span {
