@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         setTimeout(function() {
             animateText("Hideki Nishida", nomeContainer, 100); // Ajuste conforme necessário
-        }, 2000); // Ajuste conforme necessáriox
+        }, 600); // Ajuste conforme necessáriox
         
         
         // Aguarde mais um momento antes de esconder a animação
@@ -29,19 +29,19 @@ document.addEventListener("DOMContentLoaded", function() {
                                             whiteBox.remove();
                                             nomeContainer.remove();
 											document.body.style.overflow = "auto";
-                                        },1000);
+                                        },300);
 
                                         
 
                                         
-                         },1000);
+                         },300);
                    
                 
-            },2000);
+            },600);
            
             
-        }, 3000); // Ajuste conforme necessário
-    }, 1000); // Ajuste conforme necessário
+        }, 1000); // Ajuste conforme necessário
+    }, 300); // Ajuste conforme necessário
 });
 
 
