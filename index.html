@@ -43,6 +43,17 @@
         
     </span>
 </div>
+ <div class="Lorem">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum fusce ut placerat orci. At quis risus sed vulputate odio ut enim blandit volutpat. Viverra ipsum nunc aliquet bibendum enim facilisis. Amet porttitor eget dolor morbi. In metus vulputate eu scelerisque felis. Elit ut aliquam purus sit amet luctus venenatis lectus magna. Ac tincidunt vitae semper quis lectus nulla. Augue mauris augue neque gravida in. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Erat nam at lectus urna duis convallis convallis. Convallis tellus id interdum velit laoreet id. Adipiscing at in tellus integer feugiat scelerisque varius morbi. Cras ornare arcu dui vivamus arcu felis bibendum.
+
+    Ligula ullamcorper malesuada proin libero. Congue quisque egestas diam in. Vestibulum lorem sed risus ultricies tristique nulla aliquet enim tortor. Rhoncus urna neque viverra justo nec ultrices. Et pharetra pharetra massa massa. Lectus magna fringilla urna porttitor rhoncus dolor. Nec feugiat nisl pretium fusce id velit ut tortor. Lacus suspendisse faucibus interdum posuere lorem ipsum. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Sit amet consectetur adipiscing elit pellentesque habitant. Sit amet mauris commodo quis imperdiet massa tincidunt. Suscipit tellus mauris a diam maecenas. Morbi tristique senectus et netus. Mauris pellentesque pulvinar pellentesque habitant morbi. Mollis nunc sed id semper risus in.
+    
+    Et netus et malesuada fames ac turpis egestas. Tortor condimentum lacinia quis vel eros. Adipiscing diam donec adipiscing tristique risus. Commodo viverra maecenas accumsan lacus vel facilisis volutpat. At volutpat diam ut venenatis tellus in metus vulputate eu. Pellentesque elit ullamcorper dignissim cras. Adipiscing diam donec adipiscing tristique risus nec. Vel facilisis volutpat est velit egestas dui id ornare arcu. Placerat in egestas erat imperdiet sed euismod nisi porta. Suspendisse faucibus interdum posuere lorem. Augue neque gravida in fermentum et.
+    
+    Malesuada proin libero nunc consequat interdum varius sit amet mattis. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Sapien et ligula ullamcorper malesuada. Auctor elit sed vulputate mi sit amet mauris commodo. Ut placerat orci nulla pellentesque. Ante metus dictum at tempor. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Consectetur purus ut faucibus pulvinar elementum. Feugiat sed lectus vestibulum mattis ullamcorper velit. Semper quis lectus nulla at volutpat diam ut. Congue quisque egestas diam in arcu cursus euismod quis viverra. Ac placerat vestibulum lectus mauris ultrices. Tempus urna et pharetra pharetra massa massa ultricies mi quis. Sed euismod nisi porta lorem mollis aliquam ut porttitor leo. Semper eget duis at tellus at urna condimentum mattis. Posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Magnis dis parturient montes nascetur.
+    
+    Ultrices tincidunt arcu non sodales neque sodales ut. Nibh tortor id aliquet lectus proin nibh. Penatibus et magnis dis parturient montes nascetur ridiculus mus mauris. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Volutpat sed cras ornare arcu dui vivamus arcu felis bibendum. Quam elementum pulvinar etiam non quam. Pretium viverra suspendisse potenti nullam ac tortor vitae. Id faucibus nisl tincidunt eget nullam non nisi est. Vitae nunc sed velit dignissim sodales ut eu. Quisque sagittis purus sit amet volutpat consequat mauris nunc. Nulla facilisi nullam vehicula ipsum a arcu. Aenean euismod elementum nisi quis eleifend quam. Faucibus ornare suspendisse sed nisi lacus sed. Vel eros donec ac odio tempor orci dapibus. Cursus eget nunc scelerisque viverra mauris in aliquam sem. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros in. Consectetur lorem donec massa sapien faucibus et molestie ac feugiat.
+ </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://uploads-ssl.webflow.com/5e008677e65e063e42daedb6/js/webflow.454736d9e.js" type="text/javascript"></script>
@@ -66,7 +77,8 @@
                 mouseX, mouseY, windowHalfX,
                 windowHalfY, stats, geometry,
                 starStuff, materialOptions, stars,
-                scene, camera, renderer, uniforms;
+                scene, camera, renderer, uniforms,
+                betaV, gammaV;
         
 
 
@@ -153,6 +165,15 @@
 
                 if (isMobileDevice()) {
     window.addEventListener('deviceorientation', onDeviceMove, false);
+    document.addEventListener('mousemove', onMouseMove, false);
+
+
+
+
+
+
+
+
 } else {
     document.addEventListener('mousemove', onMouseMove, false);
 }
@@ -173,14 +194,16 @@
 
                 if (isMobileDevice()) {
         // Atualize a posição da câmera com base nos valores do sensor de movimento
-        camera.position.x += ((mouseX * 3) - camera.position.x) * 0.005;
-        camera.position.y += (((-mouseY) * 3) - camera.position.y) * 0.005;
+        camera.position.x += (mouseX + (gammaV * 3) - camera.position.x) * 0.005;
+        camera.position.y += (-mouseY - ((-betaV) * 3) - camera.position.y) * 0.005;
     } else {
         // Mantenha o comportamento original do mouse para desktop
         camera.position.x += (mouseX - camera.position.x) * 0.005;
         camera.position.y += (-mouseY - camera.position.y) * 0.005;
     }
-    
+    camera.position.x += window.scrollX * 0.001;
+    camera.position.y += window.scrollY * 0.001;
+
                 camera.lookAt( scene.position );
                 renderer.render(scene, camera);
             }
@@ -297,8 +320,8 @@
     // Certifique-se de testar em vários dispositivos para obter o comportamento desejado
 
     // Atualize mouseX e mouseY com base nos valores de rotação
-    mouseX = gamma;
-    mouseY = beta;
+    gammaV = gamma;
+    betaV = beta;
 
 }
         

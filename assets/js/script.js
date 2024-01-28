@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                           abertura.style.display = 'none';
                                             whiteBox.remove();
                                             nomeContainer.remove();
+											document.body.style.overflow = "auto";
                                         },1000);
 
                                         
