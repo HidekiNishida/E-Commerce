@@ -87,6 +87,18 @@ document.addEventListener('mousedown', function(e) {
     isMouseDown = false;
   });
 
+
+  document.addEventListener('touchmove', function(event) {
+    event.preventDefault();
+    var touch = event.touches[0];
+    var x = touch.clientX;
+    var y = touch.clientY;
+    var radius = Math.random() * 2 + 1;
+    var color = '#fff';
+    var velocity = Math.random() * 5 + 2;
+  
+    particles.push(new Particle(x, y, radius, color, velocity));
+  });
   
 
 animate();

@@ -183,7 +183,7 @@
                 if (isMobileDevice()) {
     window.addEventListener('deviceorientation', onDeviceMove, false);
     document.addEventListener('mousemove', onMouseMove, false);
-
+    document.addEventListener('touchmove', ontouchmove, false )
 
 
 
@@ -337,6 +337,15 @@ camera.position.y += window.scrollY * 0.001;
                 mouseY = e.clientY - windowHalfY;
             }
             
+            function ontouchmove(e){
+                
+                var touch = e.touches[0];
+
+                mouseX = touch.clientX - windowHalfX;
+                mouseY = touch.clientY - windowHalfY;
+
+            }
+
             function onDeviceMove(event) {
     // Obtenha os valores de rotação
     var alpha = event.alpha || 0; // rotação em torno do eixo z
