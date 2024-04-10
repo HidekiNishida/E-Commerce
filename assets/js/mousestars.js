@@ -5,6 +5,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var particles = [];
+var isMouseDown = false;
 
 function Particle(x, y, radius, color, velocity) {
   this.x = x;
@@ -40,6 +41,8 @@ function animate() {
   requestAnimationFrame(animate);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  
+
   particles.forEach(function(particle, index) {
     if (particle.alpha > 0) {
       particle.draw();
@@ -59,6 +62,32 @@ document.addEventListener('mousemove', function(e) {
 
   particles.push(new Particle(x, y, radius, color, velocity));
 });
+
+document.addEventListener('mousedown', function(e) {
+    isMouseDown = true;
+
+    for (var i = 0; i < 10; i++) {
+     
+    var x = e.clientX;
+    var y = e.clientY;
+    var radius = Math.random() * 2 + 1;
+    var color = '#fff';
+    var velocity = Math.random() * 5 + 2;
+  
+    particles.push(new Particle(x, y, radius, color, velocity));
+
+    }
+
+
+    
+
+  });
+  
+  document.addEventListener('mouseup', function(e) {
+    isMouseDown = false;
+  });
+
+  
 
 animate();
 
