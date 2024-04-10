@@ -3,6 +3,10 @@ var ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+canvas.position = fixed;
+canvas.top = 0;
+canvas.left = 0;
+canvas.display = block;
 
 var particles = [];
 
