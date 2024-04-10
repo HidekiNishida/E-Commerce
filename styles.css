@@ -155,6 +155,23 @@ canvas {
     font-weight: bold;
 }
 
+.MePhoto {
+
+    position: absolute;
+    top: 10px;
+    margin-top: 20px;
+    width: 400px;
+    margin-right: 10%;
+    margin-left: 60%;
+    margin-bottom: 10px;
+  
+    text-align: right;
+    align-content: right;
+    align-items: right;
+    
+
+}
+
 .Lorem {
     position: absolute;
     top: 30px;
@@ -171,8 +188,29 @@ canvas {
 
   @media only screen and (max-width: 600px) {
     /* Altera o tamanho da fonte para dispositivos com largura máxima de 600 pixels (mobile) */
+   .MePhoto {
+
+    margin-top: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: left;
+    align-content: left;
+    align-items: left;
+    width: 200px;
+    
+   }
+
     .Description {
-        font-size: 18px
+        
+        font-size: 18px;
+        margin-top: 230px;
+    }
+
+    .lorem {
+
+        top: 10px;
+        margin-top: 100px;
+
     }
     
 }
