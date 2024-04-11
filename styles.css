@@ -1,11 +1,15 @@
+
+
+
 body {
     margin: 0;
     overflow: hidden; /* Para evitar barras de rolagem durante a animação */
-    font-family: 'Minha Fonte', 'Arial Narrow', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Montserrat , sans-serif;
     background-color: #000011;
 }
 
-canvas {
+
+canvas { 
     position: fixed;
     top: 0;
     left: 0;
@@ -20,6 +24,16 @@ canvas {
  right: 20px;
 
 }
+
+
+
+
+
+.logol {
+   padding: 4px;
+}
+
+
 
 
 .animation-container {
@@ -46,6 +60,7 @@ canvas {
     visibility: hidden;
 }
 
+
 .glass-menu {
     position: fixed;
     margin-top: 70px;
@@ -56,6 +71,7 @@ canvas {
     background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo com opacidade para criar o efeito de vidro */
     border-radius: 10px; /* Borda arredondada para suavizar a aparência */
     z-index: 2;
+    border: 1px solid  rgba(255, 255, 255, 0.204);
   }
   .glass-menu ul {
     list-style: none;
@@ -82,6 +98,29 @@ canvas {
     z-index: 2;
 }
 
+.tag-name {
+    position: absolute;
+    bottom: -30px; /* Posição inicial abaixo do item da lista */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #555;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0; /* Inicialmente oculta */
+    transition: bottom 0.3s ease, opacity 0.3s ease; /* Transições suaves */
+  }
+
+.glass-menu img:hover {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Adiciona uma sombra branca quando o mouse passa por cima */
+    border: 1px solid  rgba(255, 255, 255, 0.204); 
+    border-radius: 5px;
+}
+
+.scroll-menu img:hover .tag-name {
+    bottom: -50px; /* Posição quando o mouse passa por cima */
+    opacity: 1; /* Torna visível */
+}
 
 #abertura {
     width: 100%;
@@ -153,6 +192,7 @@ canvas {
     align-content: left;
     align-items: left;
     font-weight: bold;
+    font-family: Montserrat , sans-serif;
 }
 
 .MePhoto {
@@ -172,6 +212,11 @@ canvas {
 
 }
 
+.scroll-div {
+    visibility: hidden; /* Torna a div e todo o seu conteúdo invisível */
+  }
+
+
 .Lorem {
     position: absolute;
     top: 30px;
@@ -181,10 +226,7 @@ canvas {
     color: white;
 }
 
-  @font-face {
-    font-family: 'Minha Fonte';
-    src: url('assets/fonts/AlgoriaLight-nRGdJ.ttf');
-  }
+  
 
   @media only screen and (max-width: 600px) {
     /* Altera o tamanho da fonte para dispositivos com largura máxima de 600 pixels (mobile) */
@@ -212,5 +254,68 @@ canvas {
         margin-top: 100px;
 
     }
-    
+
+    .glass-menu {
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        bottom: 0; /* Posiciona o menu no rodapé da página */
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 50px;
+        margin-bottom: 0;
+        padding: 0;
+        backdrop-filter: blur(10px); /* Aplica um desfoque de 10 pixels */
+        background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo com opacidade para criar o efeito de vidro */
+        border-radius: 0px; /* Borda arredondada para suavizar a aparência */
+        border: 0px;
+        border-top: 1px solid  rgba(255, 255, 255, 0.204);
+        z-index: 2;
+      }
+      .glass-menu ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .glass-menu li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 10px;
+      }
+      .glass-menu img {
+        height: 50px;
+      }
+
+      .scroll-div {
+        position: fixed;
+        top: -100px; /* Esconde a div acima da tela */
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        line-height: 100px; /* Centraliza verticalmente o texto */
+        transition: top 0.3s ease; /* Adiciona uma transição suave */
+        background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo com opacidade para criar o efeito de vidro */
+        color: white;
+        display: flex;
+  justify-content: center;
+  align-items: center;
+        backdrop-filter: blur(10px);
+        z-index: 2;
+        border-bottom: 1px solid  rgba(255, 255, 255, 0.204);
+     visibility: visible; /* Torna a div e todo o seu conteúdo visível */
+     font-family: Montserrat , sans-serif;
+    }
+      
+      .scroll-div.visible {
+        top: 0; /* Exibe a div quando a classe 'visible' é adicionada */
+      }
+      
+      .content {
+        height: 2000px; /* Altura para simular uma página com rolagem */
+      }
+      
 }

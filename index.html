@@ -8,7 +8,10 @@
   content="PortFolio de Hideki Nishida, Aqui você descobre
   mais sobre mim e meu trabalho.">
     <link rel="stylesheet" href="styles.css">
-    <title>Hideki Nishida | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+       <title>Hideki Nishida | Home</title>
     <link id="favicon" rel="icon" type="image/svg+xml" href="assets/images/dp_male.svg">
     <link href="assets/css/stars-three.css" rel="stylesheet" type="text/css">
     <meta property="og:image" content="assets/images/dp_male.svg">
@@ -17,12 +20,16 @@
 </head>
 <body>
     
-
+    <div class="scroll-div">
+        <h3>Vitor Hideki</h3>
+      </div>
     
     <canvas id="canvas"></canvas>
     <div id="BackgroundStars"></div>
     <div class="white-box-menu">
-        VN
+        
+        <img src="assets/images/V.svg" alt="GIF" class="logol">
+        
     </div>
     <nav class="glass-menu">
        
@@ -38,7 +45,7 @@
         <div class="black-background"></div>
         <div class="animation-container">
             <div class="white-box">
-                VN
+                <img src="assets/images/V.svg" alt="GIF" class="logol">
             </div>
             <div id="nome-container" class="nome"></div>
         </div>
@@ -367,5 +374,6 @@ camera.position.y += window.scrollY * 0.001;
         })();
         </script>
         <script src="assets/js/mousestars.js"></script>
+        <script src="assets/js/MobileScrollDiv.js"></script>
 </body>
 </html>
