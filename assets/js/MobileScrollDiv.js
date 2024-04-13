@@ -6,9 +6,11 @@ window.addEventListener("scroll", function() {
   if (currentScroll > lastScrollTop) {
     // Scrolling down
     document.querySelector(".scroll-div").classList.remove("visible");
+    document.querySelector(".white-box-menu").classList.remove("visible");
   } else {
     // Scrolling up
     document.querySelector(".scroll-div").classList.add("visible");
+    document.querySelector(".white-box-menu").classList.add("visible");
   }
 
   verifyscrolltop();

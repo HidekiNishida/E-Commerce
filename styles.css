@@ -520,10 +520,22 @@ font-style: oblique;
      font-family: Montserrat , sans-serif;
      font-weight: 100;
     }
+
+    .scroll-div.visible {
+      top: 0; /* Exibe a div quando a classe 'visible' é adicionada */
+      display: block;
+    }
       
-      .scroll-div.visible {
-        top: 0; /* Exibe a div quando a classe 'visible' é adicionada */
+    .white-box-menu {
+      top: -100px; 
+      display: flex;
+      visibility:hidden;
+    }
+    
+      .white-box-menu.visible {
+        top: 0; 
         display: block;
+        visibility: visible;
       }
 
       .whatsapp-button {
