@@ -4,7 +4,8 @@
 body {
     margin: 0;
     overflow: hidden; /* Para evitar barras de rolagem durante a animação */
-    font-family: Montserrat , sans-serif;
+    font-family: Montserrat, sans-serif;
+    font-weight: 100;
     background-color: #000011;
     overflow-x: hidden;
     
@@ -58,10 +59,20 @@ canvas {
 
 .logol {
    padding: 4px;
+   
+
 }
 
 
-
+.Nome {
+font-family: Montserrat;
+font-weight: bolder;
+background-image: linear-gradient(to right,#002fff, #28f89e);
+font-style: oblique;
+-webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+}
 
 .animation-container {
     position: relative;
@@ -209,7 +220,7 @@ canvas {
 
   .Description {
     flex: 1;
-    font-size: 3vw;
+    font-size: 2.5vw;
     /*position: absolute;
     top: 10px;
     margin-top: 150px;
@@ -226,7 +237,7 @@ canvas {
     text-align: left;
     align-content: left;
     align-items: left;
-    font-weight: bold;
+    font-weight: 100;
     font-family: Montserrat , sans-serif;
     opacity: 0; /* Começa com opacidade 0 para esconder o texto */
     transform: translateX(-100%);
@@ -266,6 +277,10 @@ canvas {
     margin-top: 500px;
     margin-left: 10%;
     margin-right: 10%;*/
+    margin-top: 10px;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 1.2;
     transform: translateX(-100%);
     opacity: 0;
     color: white;
@@ -374,6 +389,10 @@ canvas {
     width: 90vw;
     
    }
+
+   .titulo {
+    font-size: 30px;
+   }
    .circle {
     position: fixed;
     width: 100vw;
@@ -399,7 +418,7 @@ canvas {
   }
     .Description {
         
-        font-size: 18px;
+        font-size: 5.5vw;
         /*margin-top: 230px;*/
     }
 
@@ -471,6 +490,7 @@ canvas {
         border-bottom: 1px solid  rgba(255, 255, 255, 0.204);
      visibility: visible; /* Torna a div e todo o seu conteúdo visível */
      font-family: Montserrat , sans-serif;
+     font-weight: 100;
     }
       
       .scroll-div.visible {
