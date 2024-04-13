@@ -529,13 +529,11 @@ font-style: oblique;
     .white-box-menu {
       top: -100px; 
       display: flex;
-      visibility:hidden;
     }
-    
+
       .white-box-menu.visible {
         top: 0; 
         display: block;
-        visibility: visible;
       }
 
       .whatsapp-button {
