@@ -18,6 +18,18 @@ body {
   padding-bottom: 60px;
 }
 
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: #000011;
+}
+
+.whatsapp-button img {
+  width: 60px; /* ajuste conforme necessário */
+  height: auto;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -514,7 +526,11 @@ font-style: oblique;
         display: block;
       }
 
-      
+      .whatsapp-button {
+        position: fixed;
+        bottom: 65px;
+        right: 20px;
+      }
       
       .content {
         height: 2000px; /* Altura para simular uma página com rolagem */
