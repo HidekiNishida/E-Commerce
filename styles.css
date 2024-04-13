@@ -527,9 +527,7 @@ font-style: oblique;
       }
 
       .whatsapp-button {
-        position: fixed;
         bottom: 65px;
-        right: 20px;
       }
       
       .content {
