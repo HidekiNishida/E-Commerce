@@ -6,6 +6,31 @@ body {
     overflow: hidden; /* Para evitar barras de rolagem durante a animação */
     font-family: Montserrat , sans-serif;
     background-color: #000011;
+    overflow-x: hidden;
+    
+}
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  overflow-wrap: break-word; 
+}
+
+.title {
+  
+  text-align: center;
+}
+
+.image {
+  flex: 1;
+  text-align: center;
+  margin-left: 20px;
 }
 
 
@@ -19,9 +44,11 @@ canvas {
 }
 
 #conteudo-do-site {
- position: absolute;
- left: 65px;
- right: 20px;
+ /*position: absolute;*/
+ margin: 5%;
+ margin-top: 0%;
+ margin-left: 80px;
+ 
 
 }
 
@@ -171,6 +198,8 @@ canvas {
 .animated-text span {
     display: none;
     line-height: 1;
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
   }
   
   .animated-text span.active {
@@ -178,14 +207,18 @@ canvas {
   }
 
   .Description {
-    position: absolute;
+    flex: 1;
+    font-size: 3vw;
+    /*position: absolute;
     top: 10px;
     margin-top: 150px;
-    width: 100%;
+   
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 10px;
-    font-size: 40px;
+    margin-bottom: 10px;*/
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
+    width: 100%;
     line-height: 1.5;
     color: white;
     text-align: left;
@@ -196,14 +229,15 @@ canvas {
 }
 
 .MePhoto {
-
-    position: absolute;
+    margin-left: 20px;
+    flex: 1;
+    /* position: absolute; 
     top: 10px;
-    margin-top: 20px;
-    width: 400px;
-    margin-right: 10%;
+    margin-top: 20px; */
+    width: 20vw;
+    /*margin-right: 10%;
     margin-left: 60%;
-    margin-bottom: 10px;
+    margin-bottom: 10px;*/
   
     text-align: right;
     align-content: right;
@@ -214,15 +248,17 @@ canvas {
 
 .scroll-div {
     visibility: hidden; /* Torna a div e todo o seu conteúdo invisível */
+    display: none;
+    height: 0;
   }
 
 
 .Lorem {
-    position: absolute;
+    /*position: absolute;
     top: 30px;
     margin-top: 500px;
     margin-left: 10%;
-    margin-right: 10%;
+    margin-right: 10%;*/
     color: white;
 }
 
@@ -232,20 +268,28 @@ canvas {
     /* Altera o tamanho da fonte para dispositivos com largura máxima de 600 pixels (mobile) */
    .MePhoto {
 
-    margin-top: 15px;
+    /*margin-top: 15px;
     margin-left: 10%;
     margin-right: 10%;
     text-align: left;
     align-content: left;
-    align-items: left;
-    width: 200px;
+    align-items: left;*/
+    width: 90vw;
     
    }
 
+   #conteudo-do-site {
+
+   margin-left: 5%;
+
+   }
+   .container {
+    flex-direction: column-reverse;
+  }
     .Description {
         
         font-size: 18px;
-        margin-top: 230px;
+        /*margin-top: 230px;*/
     }
 
     .lorem {
@@ -312,7 +356,10 @@ canvas {
       
       .scroll-div.visible {
         top: 0; /* Exibe a div quando a classe 'visible' é adicionada */
+        display: block;
       }
+
+      
       
       .content {
         height: 2000px; /* Altura para simular uma página com rolagem */

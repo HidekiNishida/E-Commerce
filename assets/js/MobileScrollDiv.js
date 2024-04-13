@@ -11,5 +11,19 @@ window.addEventListener("scroll", function() {
     document.querySelector(".scroll-div").classList.add("visible");
   }
 
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+  verifyscrolltop();
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para dispositivos móveis ou rolagem negativa
 }, false);
+
+verifyscrolltop();
+
+
+function verifyscrolltop(){
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (currentScroll === 0) {
+    document.querySelector(".scroll-div").classList.add("visible");
+  }
+}
+
