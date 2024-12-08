@@ -12,6 +12,39 @@ body {
     
 }
 
+.rounded-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;  /* Borda branca */
+  color: white;  /* Cor do texto branca */
+  padding: 15px 30px;
+  font-size: 1.2vw;  /* Tamanho da fonte relativo à largura da tela */
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  border-radius: 30px;  /* Borda arredondada */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);  /* Aplicando efeito de blur ao fundo */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);  /* Sombra suave ao redor do botão */
+  z-index: 2;
+ 
+}
+
+.button-container {
+  margin-top: 10px;
+  display: flex;  /* Alinha os botões horizontalmente */
+  gap: 20px;  /* Espaço entre os botões */
+  /*justify-content: center;  /* Centraliza os botões no contêiner */
+  /*align-items: center;  /* Alinha os botões verticalmente no centro */
+  /*height: 100vh;  /* Faz o contêiner ocupar toda a altura da tela */
+}
+
+/* Efeito quando o mouse passa sobre o botão */
+.rounded-button:hover {
+  background-color: white;  /* Fundo branco ao passar o mouse */
+  color: black;  /* Letra preta ao passar o mouse */
+  box-shadow: 0 0 0px rgba(255, 255, 255, 0.5);  /* Sombra suave ao redor do botão */
+}
+
 .Copyright {
   padding-top:20px;
   text-align: center;
@@ -30,6 +63,15 @@ body {
   height: auto;
 }
 
+.item {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -42,7 +84,6 @@ body {
 }
 
 .title {
-  
   text-align: center;
 }
 
@@ -66,7 +107,8 @@ canvas {
  /*position: absolute;*/
  margin: 5%;
  margin-top: 0%;
- margin-left: 80px;
+ margin-left: 10vw;
+ margin-right: 10vw;
  
 
 }
@@ -90,6 +132,10 @@ font-style: oblique;
 -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+}
+
+.Maior {
+  font-size: 5vw; 
 }
 
 .animation-container {
@@ -180,6 +226,7 @@ font-style: oblique;
 }
 
 .titulo {
+ top: 30px;
   opacity: 0; /* Começa com opacidade 0 para esconder o texto */
     transform: translateX(-100%);
   animation: fadeInLeft 0.5s ease-out forwards; /* Aplica a animação */
@@ -256,7 +303,7 @@ font-style: oblique;
     overflow-wrap: break-word; 
 
     width: 100%;
-    line-height: 1.5;
+    line-height: 1.2;
     color: white;
     text-align: left;
     align-content: left;
@@ -302,6 +349,7 @@ font-style: oblique;
     margin-left: 10%;
     margin-right: 10%;*/
     margin-top: 10px;
+    margin-bottom: 20px;
     font-weight: 200;
     font-size: 20px;
     line-height: 1.2;
@@ -403,6 +451,16 @@ font-style: oblique;
   @media only screen and (max-width: 600px) {
     /* Altera o tamanho da fonte para dispositivos com largura máxima de 600 pixels (mobile) */
 
+
+    
+ 
+    .rounded-button {
+      
+      padding: 10px 20px;
+      font-size: 14px;
+      
+    }
+
     .Lorem {
       font-weight: 100;
        font-size: 18px;
@@ -423,6 +481,7 @@ font-style: oblique;
    }
 
    .titulo {
+    padding-top:10px;
     font-size: 30px;
    }
 
@@ -454,6 +513,10 @@ font-style: oblique;
         
         font-size: 5.5vw;
         /*margin-top: 230px;*/
+    }
+
+    .Maior{
+      font-size: 10vw;
     }
 
    
